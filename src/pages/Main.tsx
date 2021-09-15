@@ -23,7 +23,6 @@ function Main() {
         if (!query) {
             return
         }
-
         dispatch(filterCharacters(query))
     }, [query])
 
@@ -56,8 +55,7 @@ function Main() {
                 onChange={search}
                 label='Search by name'
                 style={{ marginBottom: 20 }}
-                variant="outlined"
-            />
+                variant="outlined" />
             <FormControl
                 variant="outlined"
                 style={{ marginLeft: 10 }}>

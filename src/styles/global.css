@@ -45,3 +45,16 @@ a {
     color: #fff;
     font-size: 1rem;
 }
+
+.about {
+    margin-top: 40px;
+}
+
+.about-name {
+    margin: 0 0 10px 0;
+}
+
+.about-subtitle {
+    margin: 0;
+    font-weight: 500;
+}
