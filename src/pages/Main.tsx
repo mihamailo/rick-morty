@@ -3,8 +3,7 @@ import CharactersList from '../components/CharactersList'
 import Pagination from '@material-ui/lab/Pagination';
 import { FormControl, Grid, InputLabel, MenuItem, Select, TextField } from '@material-ui/core';
 import { useTypedSelector } from '../hooks/useTypedSelector';
-import { filterCharacters } from '../store/action-creators/characters';
-import { useDispatch } from 'react-redux';
+import { useActions } from '../hooks/useActions';
 
 function Main() {
     const { charactersInfo } = useTypedSelector(state => state.characters)
@@ -14,7 +13,7 @@ function Main() {
     const [status, setStatus] = useState<string>('')
     const [gender, setGender] = useState<string>('')
     const [timer, setTimer] = useState<null | ReturnType<typeof setTimeout>>(null)
-    const dispatch = useDispatch()
+    const { filterCharacters } = useActions()
     const _onChange = (e: object, page: number) => {
         setPage(page)
     }
@@ -23,7 +22,7 @@ function Main() {
         if (!query) {
             return
         }
-        dispatch(filterCharacters(query))
+        filterCharacters(query)
     }, [query])
 
     const search = (e: React.ChangeEvent<HTMLInputElement>) => {
